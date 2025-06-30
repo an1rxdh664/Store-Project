@@ -40,7 +40,7 @@ products.forEach((product) => {
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart js-add-cart">
             <img src="images/icons/checkmark.png">
             Added
           </div>
@@ -52,16 +52,22 @@ products.forEach((product) => {
     `
 });
 
-document.querySelector('.js-product-grid').innerHTML = productsHTML;
+
+
+document.querySelector('.js-product-grid').innerHTML = productsHTML; // generates the html for the products
+
+
 
 // Cart function
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     button.addEventListener('click', () => {
+
         // button.dataset // it gives us all the data attribute connected to the element.
         // console.log(button.dataset.productName); // to access certain dataset info
+        
         const productId = button.dataset.productId;
         let matchingItem;
-
+        
         cart.forEach((item) => {
             if(productId === item.productId){
                 matchingItem = item;
@@ -84,7 +90,17 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
         cart.forEach((item) => {
             totalQuantity += item.quantity;
         })
-
+      
         document.querySelector('.js-cart-quantity').innerHTML = totalQuantity;
+
+        
+        // Added to cart alert update
+
+        const addedAlert = button.closest('.product-container').querySelector('.js-add-cart');
+        addedAlert.classList.add('js-cart-display');
+        setTimeout((alert) => {
+          addedAlert.classList.remove('js-cart-display');
+        },2000);
+        
     })
 })
