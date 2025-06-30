@@ -1,4 +1,7 @@
+import {cart} from '../data/cart.js';
+
 let productsHTML = '';
+
 products.forEach((product) => {
     productsHTML += `
         <div class="product-container">
@@ -101,6 +104,6 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
         setTimeout((alert) => {
           addedAlert.classList.remove('js-cart-display');
         },2000);
-        
+
     })
 })
