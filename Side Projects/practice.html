@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="intro">Hello</p>
+    <input type="text" class="inpBox" onkeydown="if(event.key==='Enter') introduction()">
+    <button onclick="introduction()">Submit</button>
+    <script>
+        function introduction(){
+            const val = document.querySelector('.inpBox').value;
+            document.querySelector('.intro').textContent = "Hi " + val;    
+        }
+    </script>
+</body>
+</html>

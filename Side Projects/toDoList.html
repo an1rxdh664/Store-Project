@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>To do list</p>
+    <input class="inpBox">
+    <input type="date" class="due-date">
+    <button onclick="addToArray()">Add</button>
+    <p class="error-message"></p>
+    <div class="listElement"></div>
+
+    <script>
+        const toDo = [];
+        renderList();
+        function renderList(){
+            let toDoListHTML = '';
+            for(let i=0;i<toDo.length;i++){
+                const name = toDo[i].name;
+                const dueDate = toDo[i].dueDate;
+                toDoListHTML += `
+                    <p>
+                        ${name} ${dueDate}
+                        <button onclick="
+                            toDo.splice(${i} , 1); 
+                            renderList();">Delete</button>
+                    </p>
+                `;
+            }
+            document.querySelector('.listElement')
+                .innerHTML = toDoListHTML;
+        }
+        function addToArray(){
+
+            const inpElement = document.querySelector('.inpBox');
+            
+            const date = document.querySelector('.due-date');
+            
+            const errBox = document.querySelector('.error-message'); 
+            
+            if(inpElement.value===''){
+                errBox.textContent = "Type something in the input box first."
+            } else {
+                errBox.textContent = '';
+                toDo.push({
+                    name: inpElement.value,
+                    dueDate: date.value
+                });
+                inpElement.value = '';
+                date.value = '';
+            }
+            
+            renderList();
+        }
+    </script>
+</body>
+</html>
