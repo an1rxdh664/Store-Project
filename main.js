@@ -308,9 +308,25 @@
 // console.log(mat)
 
 
-// Coin change - Q 322
-const coins = [1,2,5];
-const amount = 11;
-var coinChange = function(coins, amount) {
-    
-};
+// Leetcode Q - Last Word length
+// const s = "Hello World";
+// const s = "   fly me   to   the moon  ";
+
+// var lengthOfLastWord = function(s) {
+//     let lastWord = "";
+
+//     let read = false;
+//     for(let i=s.length-1;i>=0;i--){
+//         if(s[i]===' ' && read===true){
+//             break;   
+//         } else if(s[i]===' '&&read===false){
+//             continue;
+//         }
+//         lastWord = lastWord + s[i];
+//         read = true;
+//     }
+
+//     return lastWord.length;
+// };
+
+// lengthOfLastWord(s);
