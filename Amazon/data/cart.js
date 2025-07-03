@@ -3,11 +3,13 @@ if(!cart){
     cart = [
         {
             productId: '101',
-            quantity: 2
+            quantity: 2,
+            deliveryOptionsId: '1',
         },
         {
             productId: '102',
-            quantity: 1
+            quantity: 1,
+            deliveryOptionsId: '2'
         }
     ];
 }
@@ -32,7 +34,8 @@ export function addToCart(productId, button){
   } else {
       cart.push({
           productId: productId,
-          quantity: quantity
+          quantity: quantity,
+          deliveryOptionsId: '1'
       });
   }
 
