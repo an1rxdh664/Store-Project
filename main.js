@@ -330,3 +330,24 @@
 // };
 
 // lengthOfLastWord(s);
+
+var kthCharacter = function(k) {
+    let word = "z";
+    let wordArray = [];
+    wordArray.push(word.split(''));
+    console.log
+    // for(let i=0;i<k;i++){
+        
+    // }
+};
+kthCharacter(5);
+// console.log(kthCharacter(5));
+
+
+
+// if(word[i]==='z') concStr = 'a';
+// else {
+//     asciiVal = word.charCodeAt(i) + 1;
+//     concStr = String.fromCharCode(asciiVal);
+//     word += concStr;
+// }
