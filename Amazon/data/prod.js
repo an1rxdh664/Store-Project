@@ -48,5 +48,15 @@ export const products = [
             count: 5507
         },
         priceCents: 12000
+    },
+    {
+        id: '106',
+        image: 'images/products/sky-flower-stud-earrings.webp',
+        name: 'Sky Flower Earrings',
+        rating: {
+            stars: 5.0,
+            count: 550
+        },
+        priceCents: 800
     }
 ];
